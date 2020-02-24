@@ -2,6 +2,18 @@ var http = require("http");
 var fs = require("fs");
 var os = require("os");
 var ip = require('ip');
+var mb;
+var fmb;
+
+function convertBytes(){
+var mb = (os.totalmem()) / 1000000;
+return mb; 
+}
+
+function convertFBytes(){
+var fmb = (os.freemem()) / 1927.569408;
+return fmb
+}
 http.createServer(function(req, res){
 
 if(req.url === "/"){
@@ -21,10 +33,10 @@ html=`
 <body>
 <p>Hostname: ${myHostName}</p>
 <p>IP: ${ip.address()}</p>
-<p> Server Uptime: ${os.uptime()} </p>
-<p> Total Memory: ${os.totalmem()} </p>
-<p> Free Memory: </p>
-<p> Number of CPUs: </p> 
+<p> Server Uptime: ${convertUptime()} </p>
+<p> Total Memory: ${convertBytes()} MB</p>
+<p> Free Memory: ${convertFBytes()} MB </p>
+<p> Number of CPUs: ${os.cpus().length} </p> 
 </body>
 </html>`
 res.writeHead(200, {"Content-Type": "text/html"});
