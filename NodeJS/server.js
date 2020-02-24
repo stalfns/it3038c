@@ -2,7 +2,6 @@ var http = require("http");
 var fs = require("fs");
 var os = require("os");
 var ip = require('ip');
-
 http.createServer(function(req, res){
 
 if(req.url === "/"){
@@ -10,7 +9,7 @@ fs.readFile("./Public/index.html","UTF-8", function(err, body){
 res.writeHead(200,{"content-Type": "text/html"});
 res.end(body);
 });
-}
+} 
 else if(req.url.match("/sysinfo")){
 myHostName=os.hostname();
 html=`
@@ -22,8 +21,8 @@ html=`
 <body>
 <p>Hostname: ${myHostName}</p>
 <p>IP: ${ip.address()}</p>
-<p> Server Uptime: </p>
-<p> Total Memory: </p>
+<p> Server Uptime: ${os.uptime()} </p>
+<p> Total Memory: ${os.totalmem()} </p>
 <p> Free Memory: </p>
 <p> Number of CPUs: </p> 
 </body>
@@ -35,6 +34,7 @@ else{
 res.writeHead(404, {"Content-Type": "text/plain"});
 res.end(`404 File Not Found at ${req.url}`);
 }
+
 
 
 }).listen(3000)
