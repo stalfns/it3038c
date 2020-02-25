@@ -60,7 +60,7 @@ html=`
 <body>
 <p>Hostname: ${myHostName}</p>
 <p>IP: ${ip.address()}</p>
-<p> Server Uptime: Days:${convertDays()} Hours: ${convertHours()} Minutes: ${convertMintues()} Seconds: ${os.uptime()} </p>
+<p> Server Uptime: Days:${convertDays()} Hours: ${convertHours()} Minutes: ${convertMinutes()} Seconds: ${os.uptime()} </p>
 <p> Total Memory: ${convertBytes()} MB</p>
 <p> Free Memory: ${convertFBytes()} MB </p>
 <p> Number of CPUs: ${os.cpus().length} </p> 
