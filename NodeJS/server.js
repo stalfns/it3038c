@@ -4,6 +4,33 @@ var os = require("os");
 var ip = require('ip');
 var mb;
 var fmb;
+var seconds;
+var days;
+var minutes;
+var hours;
+
+function convertDays(){
+days = Math.floor(os.uptime()/86400);
+return days;
+}
+
+function convertHours(){
+var daySec = os.uptime();
+days = Math.floor(os.uptime()/86400);
+var hourSec = daySec - (days*86400);
+hours = Math.floor(hourSec/3600);
+return hours;
+}
+
+function convertMinutes(){
+var daySec = os.uptime();
+days = Math.floor(os.uptime()/86400);
+var hourSec = daySec - (days*86400);
+hours = Math.floor(hourSec/3600);
+var minSec = hourSec - (hours * 3600);
+minutes = Math.floor(minSec/60);
+return minutes;
+}
 
 function convertBytes(){
 var mb = (os.totalmem()) / 1000000;
@@ -33,7 +60,7 @@ html=`
 <body>
 <p>Hostname: ${myHostName}</p>
 <p>IP: ${ip.address()}</p>
-<p> Server Uptime: ${convertUptime()} </p>
+<p> Server Uptime: Days:${convertDays()} Hours: ${convertHours()} Minutes: ${convertMintues()} Seconds: ${os.uptime()} </p>
 <p> Total Memory: ${convertBytes()} MB</p>
 <p> Free Memory: ${convertFBytes()} MB </p>
 <p> Number of CPUs: ${os.cpus().length} </p> 
