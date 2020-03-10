@@ -1,1 +1,13 @@
-# it3038c
+#This script is an expansion of my first script, you are still able to get the weather and time, but I added the ability to view system uptime as well as currently installed disks on the system. This differes from my first script as you are now able to pick between 5 options:
+
+1) Get Time
+2) Get Weather
+3) Get Uptime
+4) Get Disk Information
+5) Exit
+
+#Running any of these commands will give the requested information as well as loop back to the beginning of the script, allowing you to choose a different option. 
+
+#You can run this script from powershell by navigating to the proper directory or by using the full path. 
+#Simply type '.\Project 2.ps1' when in the working directory. 
+
