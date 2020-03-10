@@ -24,3 +24,5 @@ Get-WUHistory |Where-Object {$_.Date -match 2020}| Select-Object *|ft
 ```
 
 This script is almost completely automatic, except the user has the choice to install the updates or not. 
+
+***Please Note: This operation might require elevated privileges***
