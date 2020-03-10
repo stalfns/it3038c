@@ -2,6 +2,8 @@ Lab 7 - PSWindowsUpdate
 
 This is a Powershell Script, that will allow for easy and detailed Windows Update information 
 
+***To run this script navigate to your working directory and type &'.\Lab 7.ps1'***
+
 In order to install this module, please see below:
 ```
 Install-Module -Name PSWindowsUpdate 
