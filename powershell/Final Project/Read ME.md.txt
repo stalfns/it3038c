@@ -1,0 +1,28 @@
+
+
+#This script will allow you to choose from 7 different options, as you will see blow. THis is an expansion of my first two scripts. I have integrated sub menu's and a pretty cool trick (option 6, make sure to enable telnet within windows!:
+
+    Get Time
+    Get Weather
+    Get Uptime
+    Get Disk Information
+	Windows Update
+	A New Hope
+    Exit
+
+#Running any of these commands will give the requested information as well as loop back to the beginning of the script, allowing you to choose a different option.
+
+#You can run this script from powershell by navigating to the proper directory or by using the full path. #Simply type '.\final.ps1' when in the working directory.
+
+The outputs would be what you'd expect:
+
+Get Time - this will display the current system time 
+Get Weather - connects to wttr.in for an in terminal weather experience 
+Get Uptime - Displays how long the system has been running 
+Get Disk Information - Displays the current disks installed on the system 
+Get Windows Update - Gets Windows updates for your system and prompts you to install them.
+A New Hope - This is pretty neat(enable telnet in windows)!
+Exit - Exits the script
+
+If a number that is not 1-7 is given an error is thrown saying "No matching option for #"
+
